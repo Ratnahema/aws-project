@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SMV AI Dynamic Pricing Tool</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9; }
+    h2 { color: #0078D4; }
+    table { width: 80%; border-collapse: collapse; margin-top: 20px; background: white; box-shadow: 0 0 8px #ddd; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    th { background-color: #0078D4; color: white; }
+  </style>
+</head>
+<body>
+  <h2>SMV AI Dynamic Pricing Tool</h2>
+  <p>This dashboard displays AI-recommended prices based on demand, inventory, and competitor data.</p>
+
+  <table>
+    <tr>
+      <th>Product</th>
+      <th>Demand</th>
+      <th>Inventory</th>
+      <th>Competitor Price</th>
+      <th>Recommended Price</th>
+    </tr>
+    {% for row in table %}
+    <tr>
+      <td>{{ row.product }}</td>
+      <td>{{ row.demand }}</td>
+      <td>{{ row.inventory }}</td>
+      <td>${{ row.competitor_price }}</td>
+      <td><b>{{ row.recommended_price }}</b></td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
+
